@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Identity Cipher - Caesar Cipher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔐 Student Identity Cipher</h1>
+            <p>Encrypt and Decrypt Your Identity Using Caesar Cipher</p>
+        </div>
+
+        <form class="form-section">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="yearLevel">Year Level:</label>
+                <input type="number" id="yearLevel" min="1" max="4" placeholder="Enter year (1-4)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="course">Course:</label>
+                <input type="text" id="course" placeholder="Enter course (e.g., BSIT, BSCS)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="keyN">Key N (Shift Number 1-25):</label>
+                <input type="number" id="keyN" min="1" max="25" placeholder="Enter shift key" required>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="btn btn-encrypt" onclick="encryptData()">🔒 Encrypt</button>
+                <button type="button" class="btn btn-decrypt" onclick="decryptData()">🔓 Decrypt</button>
+                <button type="button" class="btn btn-reset" onclick="resetForm()">↺ Reset</button>
+            </div>
+        </form>
+
+        <div class="output-section">
+            <div class="output-box">
+                <h3>📝 Plaintext (Combined Identity):</h3>
+                <div class="output-content" id="plaintextOutput">
+                    <p>Your plaintext will appear here</p>
+                </div>
+            </div>
+
+            <div class="output-box">
+                <h3>🔐 Ciphertext (Encrypted):</h3>
+                <div class="output-content" id="ciphertextOutput">
+                    <p>Your encrypted text will appear here</p>
+                </div>
+            </div>
+
+            <div class="output-box">
+                <h3>📖 Decrypted Text:</h3>
+                <div class="output-content" id="decryptedOutput">
+                    <p>Your decrypted text will appear here</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h4>ℹ️ Caesar Cipher Formula:</h4>
+            <ul>
+                <li><strong>Encrypt:</strong> E = (X + N) % 26</li>
+                <li><strong>Decrypt:</strong> D = (X - N) % 26</li>
+                <li><strong>Note:</strong> Spaces, numbers, and symbols remain unchanged</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
